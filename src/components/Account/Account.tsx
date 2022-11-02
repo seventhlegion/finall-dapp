@@ -6,15 +6,15 @@ import { useForm } from "react-hook-form";
 import useAllowance from "../../hooks/useAllowance";
 import useApprove from "../../hooks/useApprove";
 import useTransferFrom from "../../hooks/useTransferFrom";
-import { AccountProps } from "../../types/types";
 import Address from "../Address/Address";
 import Amount from "../Amount/Amount";
 import Hash from "../Hash/Hash";
 import Token from "../Token/Token";
+import { AccountProps, FormInput } from "./Account.type";
 
 function Account({ token, setToken, account, chain }: AccountProps) {
 
-    const { formState: { errors }, handleSubmit, control } = useForm();
+    const { formState: { errors }, handleSubmit, control } = useForm<FormInput>();
 
     const [address, setAddress] = useState<string>('');
     const [amount, setAmount] = useState<string>();
@@ -23,7 +23,7 @@ function Account({ token, setToken, account, chain }: AccountProps) {
     const [allowace, setAllowace] = useState<boolean>(false);
     const [transfer, setTransfer] = useState<boolean>(false);
 
-    const [transactionHash, setTransactionHash] = useState();
+    const [transactionHash, setTransactionHash] = useState<string>();
 
     // Approve ...........................................................................
     const mutationApprove = useApprove(address, parseEther(amount || '0'), token?.value as string, {
@@ -85,6 +85,7 @@ function Account({ token, setToken, account, chain }: AccountProps) {
         <Fragment>
             <form
                 className="flex flex-col justify-center items-center w-full space-y-4"
+                data-testid="form"
                 onSubmit={handleSubmit(onSubmit)}>
                 <Token chain={chain} setToken={setToken} errors={errors} control={control} />
                 <Address control={control} errors={errors} />
@@ -92,7 +93,7 @@ function Account({ token, setToken, account, chain }: AccountProps) {
                 <Stack className="flex flex-row items-center w-full">
                     <Hash transfer={transactionHash} />
                     <Button
-                        className="w-1/3 font-bold text-black/50 border-black/50 hover:text-green-500 hover:border-green-500 hover:bg-none transition-all duration-200"
+                        className="w-1/3 font-bold border-slate-300 text-slate-300 hover:text-green-500 hover:border-green-500 hover:bg-green-500/10 transition-all duration-200 rounded-lg"
                         variant="outlined"
                         type="submit">
                         {approve ? "TRANSFER" : "APPROVE"}

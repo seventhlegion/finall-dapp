@@ -2,7 +2,7 @@ import { QueryFunction, QueryKey, useQuery, UseQueryOptions, UseQueryResult } fr
 import { useERC20Contract } from './useContract';
 
 const useAllowance = (
-    owner: string,
+    owner: string | Promise<string> | undefined,
     spender: string,
     erc20Address: string,
     options?: UseQueryOptions) => {

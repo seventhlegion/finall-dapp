@@ -1,6 +1,7 @@
-import { Fragment } from "react";
+import { Fragment, ReactElement } from "react";
+import { ActiveProps } from "./Active.type";
 
-function Active({ active }: any) {
+function Active({ active }: ActiveProps): ReactElement {
     return (
         <Fragment>
             {active

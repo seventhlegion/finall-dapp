@@ -5,12 +5,12 @@ import { formatEther } from "ethers/lib/utils";
 import { useERC20Contract } from "./useContract";
 
 export const useBalance = (
-    library: Web3Provider,
-    account: string,
+    library: Web3Provider | undefined | null,
+    account: string | Promise<string>,
     options?: UseQueryOptions,
     erc20Address?: string,
     isCoin?: boolean,
-    chainId?: number) => {
+    chainId?: string) => {
 
     const contract = useERC20Contract(false, erc20Address);
 

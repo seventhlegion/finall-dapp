@@ -1,4 +1,6 @@
-const Background = () => {
+import { ReactElement } from "react"
+
+const Background = (): ReactElement => {
     return (
         <div className='absolute'>
             <svg width="1440" height="900" viewBox="0 0 1440 900" fill="none" xmlns="http://www.w3.org/2000/svg">

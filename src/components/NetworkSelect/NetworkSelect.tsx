@@ -1,11 +1,12 @@
 import { Stack } from '@mui/material';
 import { Fragment, ReactElement } from 'react';
 import { networks } from '../../contract/network';
+import { NetworkSelectProps } from './NetworkSelect.type';
 
 function NetworkSelect({
     setChain,
     connector,
-    activate }: any): ReactElement {
+    activate }: NetworkSelectProps): ReactElement {
 
     return (
         <Fragment>

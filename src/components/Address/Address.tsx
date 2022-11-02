@@ -1,7 +1,9 @@
 import { TextField } from '@mui/material'
+import { ReactElement } from 'react'
 import { Controller } from 'react-hook-form'
+import { AddressProps } from './Address.type'
 
-function Address({ control, errors }: any) {
+function Address({ control, errors }: AddressProps):ReactElement {
     return (
         <Controller
             name="address"

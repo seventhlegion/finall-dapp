@@ -1,7 +1,7 @@
 import { Container } from '@mui/material';
 import { Fragment, ReactElement } from "react";
 import { useBalance } from '../../hooks/useBalance';
-import { BalanceProps } from '../../types/types';
+import { BalanceProps } from './Balance.type';
 
 function Balance({ library, account, token, chainId }: BalanceProps): ReactElement {
 
@@ -10,8 +10,8 @@ function Balance({ library, account, token, chainId }: BalanceProps): ReactEleme
     return (
         <Fragment>
             <Container className='flex flex-col justify-center items-center space-y-2'>
-                <h1 className='w-full justify-self-start text-xl text-slate-400'>Balance : </h1>
-                <h1 className='text-xl text-slate-200'>
+                <h1 className='w-full justify-self-start text-lg text-slate-600'>Balance : </h1>
+                <h1 className='text-md text-slate-300'>
                     {balance}
                 </h1>
             </Container>

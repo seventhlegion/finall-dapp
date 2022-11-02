@@ -1,8 +1,9 @@
 import { Autocomplete, TextField } from "@mui/material";
 import { Controller } from "react-hook-form";
 import { tokens } from "../../contract/tokens";
+import { TokenProps } from "./Token.type";
 
-function Token({ chain, setToken, errors, control }: any) {
+function Token({ chain, setToken, errors, control }: TokenProps) {
 
     let options: any;
 
@@ -18,14 +19,17 @@ function Token({ chain, setToken, errors, control }: any) {
                     className="w-full"
                     disablePortal
                     options={options}
-                    onChange={(event, value) => {onChange(value); setToken(value)}}
+                    onChange={(event, value) => { onChange(value); setToken(value) }}
                     renderInput={(params) =>
                         <TextField
                             {...params}
                             label={"Tokens"}
-                            color={errors.token?.type === 'required' ? "error" : "primary"} />}
+                            color={errors.token?.type === 'required' ? "error" : "primary"}
+                        />
+                    }
                 />
-            )} />
+            )}
+        />
     )
 }
 

@@ -1,6 +1,7 @@
 import { Fragment, ReactElement } from 'react';
+import { HashProps } from './Hash.type';
 
-function Hash({ transfer }: any): ReactElement {
+function Hash({ transfer }: HashProps): ReactElement {
 
     if (transfer?.hash !== undefined) {
         return (

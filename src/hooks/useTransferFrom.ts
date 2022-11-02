@@ -4,7 +4,7 @@ import { parseUnits } from 'ethers/lib/utils';
 import { useERC20Contract } from './useContract';
 
 const useTransferFrom = (
-  owner: string,
+  owner: string | Promise<string> | undefined,
   spender: string,
   amount: BigNumber,
   erc20Address: string,

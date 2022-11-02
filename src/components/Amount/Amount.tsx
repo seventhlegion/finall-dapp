@@ -1,8 +1,10 @@
 import { TextField } from "@mui/material"
+import { ReactElement } from "react"
 import { Controller } from "react-hook-form"
 import { NumericFormat } from "react-number-format"
+import { AmountProps } from "./Amount.type"
 
-function Amount({ control, errors }: any) {
+function Amount({ control, errors }: AmountProps): ReactElement {
     return (
         <Controller
             name="amount"
