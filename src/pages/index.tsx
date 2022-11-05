@@ -1,6 +1,7 @@
 import { Web3Provider } from '@ethersproject/providers';
 import { useWeb3React } from '@web3-react/core';
 import { atom, useAtom } from 'jotai';
+import Head from 'next/head';
 import { Fragment } from 'react';
 import InjectedConnector from '../components/InjectedConnector.card.tsx/InjectedConnector.card';
 import NetworkSelect from '../components/NetworkSelect/NetworkSelect';
@@ -18,6 +19,11 @@ export default function Home() {
 
   return (
     <Fragment>
+      <Head>
+        <title>
+          Wallet Hole
+        </title>
+      </Head>
       {active
         ?
         (<InjectedConnector
