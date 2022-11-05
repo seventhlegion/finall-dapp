@@ -1,7 +1,7 @@
-import { MetaMask } from "@web3-react/metamask"
+import { InjectedConnector } from "@web3-react/injected-connector"
 
 export type NetworkSelectProps = {
     setChain: any,
-    connector: MetaMask,
+    connector: InjectedConnector,
     activate: Function
 }

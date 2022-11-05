@@ -33,8 +33,7 @@ export default function Home() {
           data-testid="NetworkSelect"
           setChain={setChain}
           connector={metaMask}
-          activate={activate}
-          deactivate={deactivate} />
+          activate={activate} />
         )
       }
     </Fragment>
