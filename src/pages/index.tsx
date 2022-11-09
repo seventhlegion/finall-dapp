@@ -1,13 +1,11 @@
 import { Web3Provider } from '@ethersproject/providers';
 import { useWeb3React } from '@web3-react/core';
-import { atom, useAtom } from 'jotai';
+import { useAtom } from 'jotai';
 import Head from 'next/head';
-import { Fragment } from 'react';
-import InjectedConnector from '../components/InjectedConnector.card.tsx/InjectedConnector.card';
-import NetworkSelect from '../components/NetworkSelect/NetworkSelect';
-import { metaMaskConnector } from '../connector/injectedConector/injectedConnector';
-
-export const initialChainId = atom<string>('');
+import InjectedConnector from '../components/InjectedConnector.card.tsx';
+import NetworkSelect from '../components/NetworkSelect';
+import { metaMaskConnector } from '../connector/injectedConector';
+import { initialChainId } from '../utils/initialValues';
 
 export default function Home() {
 
@@ -15,10 +13,10 @@ export default function Home() {
 
   const metaMask = metaMaskConnector();
 
-  const { account, activate, active, library, chainId, deactivate }: any = useWeb3React<Web3Provider>();
+  const { account, activate, active, library, chainId, deactivate } = useWeb3React<Web3Provider>();
 
   return (
-    <Fragment>
+    <>
       <Head>
         <title>
           Wallet Hole
@@ -28,7 +26,7 @@ export default function Home() {
         ?
         (<InjectedConnector
           data-testid="InjectedConnector"
-          account={account}
+          account={account as string}
           active={active}
           library={library}
           chainId={chainId}
@@ -42,6 +40,6 @@ export default function Home() {
           activate={activate} />
         )
       }
-    </Fragment>
+    </>
   )
 }
