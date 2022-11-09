@@ -3,7 +3,7 @@ import { useWeb3React } from '@web3-react/core';
 import { Contract } from 'ethers';
 import { useMemo } from 'react';
 import { ERC20_ABI } from '../contract/token';
-import { getContract } from '../utils';
+import { getContract } from '../utils/getSigner';
 
 export default function useContract(
     address: string | undefined,
