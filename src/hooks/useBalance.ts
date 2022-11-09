@@ -5,26 +5,20 @@ import { formatEther } from "ethers/lib/utils";
 import { useERC20Contract } from "./useContract";
 
 export const useBalance = (
-    library: Web3Provider | undefined | null,
-    account: string | Promise<string>,
+    library?: Web3Provider,
+    account?: string | Promise<string>,
     options?: UseQueryOptions,
     erc20Address?: string,
     isCoin?: boolean,
-    chainId?: string) => {
+    chainId?: number | string) => {
 
     const contract = useERC20Contract(false, erc20Address);
 
     const balanceOfContract: QueryFunction = async () => {
-        if (isCoin === true) {
-
-            return library?.getBalance(account);
-
-        } else if (isCoin === false) {
-
-            return contract?.functions?.balanceOf(erc20Address);
+        if (!!isCoin || isCoin === undefined) {
+            return library?.getBalance(account as string);
         } else {
-
-            return library?.getBalance(account);
+            return contract?.functions?.balanceOf(erc20Address);
         }
     }
 
