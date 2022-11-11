@@ -2,7 +2,13 @@ import { createTheme } from "@mui/material/styles";
 
 export const theme = createTheme({
     palette: {
-        mode: "dark"
+        mode: "dark",
+        success: {
+            main: "#22c55e"
+        },
+        error: {
+            main: "#cbd5e1"
+        },
     },
     components: {
         MuiStack: {

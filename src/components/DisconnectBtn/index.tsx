@@ -6,7 +6,7 @@ function DisconncetButton({ deactivate }: DisconnectButtonProps): ReactElement {
     return (
         <Button
             sx={{ borderRadius: "0.5rem" }}
-            color={"inherit"}
+            color={"error"}
             variant='outlined'
             onClick={() => {
                 deactivate();
