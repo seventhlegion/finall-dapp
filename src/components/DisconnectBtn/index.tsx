@@ -5,7 +5,8 @@ import { DisconnectButtonProps } from './type';
 function DisconncetButton({ deactivate }: DisconnectButtonProps): ReactElement {
     return (
         <Button
-            className='text-slate-300 font-bold border-slate-300 hover:text-yellow-400 hover:border-yellow-400 rounded-lg'
+            sx={{ borderRadius: "0.5rem" }}
+            color={"inherit"}
             variant='outlined'
             onClick={() => {
                 deactivate();
