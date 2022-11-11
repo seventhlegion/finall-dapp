@@ -1,4 +1,4 @@
-import { Container, Stack } from '@mui/material';
+import { Stack } from '@mui/material';
 import { useAtom } from 'jotai';
 import { ReactElement } from 'react';
 import { initialBalance } from '../../utils/initialValues';
@@ -23,32 +23,32 @@ function InjectedConnector({
 
     return (
         <>
-            <Stack direction="column" justifyContent="center" alignItems="start" height="full" width="full">
+            <Stack direction="column" justifyContent="center" alignItems="center" height="full" width="full">
                 <Background />
-                <Container className='backdrop-blur-sm shadow-lg rounded-lg max-w-2xl space-y-5 my-10 py-5 bg-neutral-900/10'>
-                    <Stack direction="row" justifyContent="start" alignItems="center" spacing={2} marginY={2} width="full">
+                <Stack spacing={2} width={"42rem"} padding={4} marginY={2} className='backdrop-blur-sm shadow-lg'>
+                    <Stack direction="row" justifyContent="start" alignItems="center" spacing={2} marginY={2} width="full" bgcolor={"none"}>
                         <h1 className='text-xl text-slate-300 font-extrabold'>
                             Wallet
                         </h1>
                         <Active active={active} />
                     </Stack>
-                    <Container className='shadow-lg rounded-lg py-5 bg-neutral-900/50 space-y-4'>
+                    <Stack spacing={2} paddingY={2} className='backdrop-blur-sm shadow-lg'>
                         <Owner account={account} />
                         <ChainId chainId={chainId} />
                         <Balance library={library} account={account} token={token as any} chainId={chainId} />
-                    </Container>
-                    <Stack direction="row" justifyContent="start" alignItems="start" spacing={2} marginY={2} width={"100%"}>
+                    </Stack>
+                    <Stack direction="row" justifyContent="start" alignItems="start" spacing={2} marginY={2} width={"100%"} bgcolor={"none"}>
                         <h1 className='text-xl text-slate-300 font-extrabold'>
                             Transaction
                         </h1>
                     </Stack>
-                    <Container className='shadow-lg rounded-lg py-5 bg-neutral-900/50'>
+                    <Stack spacing={2} padding={2} zIndex={10} className='backdrop-blur-sm shadow-lg'>
                         <Account token={token} setToken={setToken} account={account} chain={chain} library={library} />
-                    </Container>
-                    <Stack direction="row" justifyContent="start" alignItems="start" width="100%">
+                    </Stack>
+                    <Stack direction="row" justifyContent="start" alignItems="start" width="100%" bgcolor={"none"}>
                         <DisconncetButton deactivate={deactivate} />
                     </Stack>
-                </Container>
+                </Stack>
             </Stack>
         </>
     )
