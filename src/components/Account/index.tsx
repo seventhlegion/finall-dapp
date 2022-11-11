@@ -93,7 +93,11 @@ function Account({ token, setToken, account, chain }: AccountProps) {
             <Stack direction="row" justifyContent="center" width="100%">
                 <Hash transfer={transactionHash} />
                 <Button
-                    className="w-1/3 font-bold border-slate-300 text-slate-300 hover:text-green-500 hover:border-green-500 hover:bg-green-500/10 transition-all duration-200 rounded-lg"
+                    sx={{
+                        width: "33.333333%",
+                        borderRadius: "0.5rem"
+                    }}
+                    color={"success"}
                     variant="outlined"
                     type="submit">
                     {approve ? "TRANSFER" : "APPROVE"}
