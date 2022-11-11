@@ -90,7 +90,7 @@ function Account({ token, setToken, account, chain }: AccountProps) {
             <Token chain={chain} setToken={setToken} control={control} error={errors.token?.type === 'required'} />
             <Address control={control} error={errors.address?.type === 'required'} />
             <Amount control={control} error={errors.amount?.type === 'required'} />
-            <Stack direction="row" justifyContent="center" width="100%">
+            <Stack direction="row" justifyContent="center" width="100%" bgcolor={"none"}>
                 <Hash transfer={transactionHash} />
                 <Button
                     sx={{
