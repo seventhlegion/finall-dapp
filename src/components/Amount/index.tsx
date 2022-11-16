@@ -15,6 +15,7 @@ function Amount({ control, error }: AmountProps): ReactElement {
                     className="w-full"
                     label={"Amount"}
                     decimalScale={18}
+                    autoComplete="off"
                     customInput={TextField}
                     color={error ? "error" : "primary"}
                     onChange={onChange}
