@@ -3,7 +3,7 @@ import { Token } from "../../types/types"
 
 export type AccountProps = {
     token?: Token,
-    setToken: any,
+    setToken: Function,
     account?: string | Promise<string>,
     chain: string,
     library?: Web3Provider

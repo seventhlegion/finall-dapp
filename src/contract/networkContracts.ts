@@ -1,5 +1,6 @@
+import { NetworkContracts } from "../types/types";
 
-export const networkContracts = [
+export const networkContracts: NetworkContracts = [
     {
         networkChainId: "97",
         networkTokenContracts: [

@@ -1,6 +1,5 @@
 import { Autocomplete, TextField } from "@mui/material";
 import { Controller } from "react-hook-form";
-import { networkContracts } from "../../contract/networkContracts";
 import { TokenProps } from "./type";
 
 function Token({ chain, setToken, control, error }: TokenProps) {
