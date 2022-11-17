@@ -4,9 +4,9 @@ import { parseUnits } from 'ethers/lib/utils';
 import { useERC20Contract } from './useContract';
 
 const useApprove = (
-    spender: string,
-    amount: BigNumber,
-    erc20Address: string,
+    spender?: string,
+    amount?: BigNumber,
+    erc20Address?: string,
     options?: UseMutationOptions) => {
 
     const contract = useERC20Contract(true, erc20Address);

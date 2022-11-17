@@ -4,10 +4,10 @@ import { parseUnits } from 'ethers/lib/utils';
 import { useERC20Contract } from './useContract';
 
 const useTransferFrom = (
-  owner: string | Promise<string> | undefined,
-  spender: string,
-  amount: BigNumber,
-  erc20Address: string,
+  owner?: string | Promise<string>,
+  spender?: string,
+  amount?: BigNumber,
+  erc20Address?: string,
   options?: UseMutationOptions) => {
 
   const contract = useERC20Contract(true, erc20Address);

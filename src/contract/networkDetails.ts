@@ -19,7 +19,8 @@ export const networks: Networks = [
             ]
         },
         chainId: "137",
-        style: "h-full w-full text-violet-500 text-6xl font-extrabold hover:bg-violet-500 hover:text-neutral-900 transition duration-200 ease-in-out"
+        style: "#8b5cf6",
+        pattern: /^0x[a-fA-F0-9]{40}$/g
     },
     {
         network: {
@@ -41,7 +42,8 @@ export const networks: Networks = [
             ]
         },
         chainId: "97",
-        style: "h-full w-full text-orange-500 text-6xl font-extrabold hover:bg-orange-500 hover:text-neutral-900 transition duration-200 ease-in-out"
+        style: "#f97316",
+        pattern: /^0x[a-fA-F0-9]{40}$/g
     },
     {
         network: {
@@ -61,7 +63,8 @@ export const networks: Networks = [
             ]
         },
         chainId: "10",
-        "style": "h-full w-full text-red-500 text-6xl font-extrabold hover:bg-red-500 hover:text-neutral-900 transition duration-200 ease-in-out"
+        style: "#ef4444",
+        pattern: /^0x[a-fA-F0-9]{40}$/g
     },
     {
         network: {
@@ -81,7 +84,8 @@ export const networks: Networks = [
             ]
         },
         chainId: "43114",
-        style: "h-full w-full text-red-300 text-6xl font-extrabold hover:bg-red-300 hover:text-neutral-900 transition duration-200 ease-in-out"
+        style: "#fca5a5",
+        pattern: /^0x[a-fA-F0-9]{40}$/g
     },
     {
         network: {
@@ -101,7 +105,8 @@ export const networks: Networks = [
             ]
         },
         chainId: "42161",
-        style: "h-full w-full text-sky-500 text-6xl font-extrabold hover:bg-sky-500 hover:text-neutral-900 transition duration-200 ease-in-out"
+        style: "#06b6d4",
+        pattern: /^0x[a-fA-F0-9]{40}$/g
     },
     {
         network: {
@@ -121,6 +126,7 @@ export const networks: Networks = [
             ]
         },
         chainId: "128",
-        style: "h-full w-full text-green-500 text-6xl font-extrabold hover:bg-green-500 hover:text-neutral-900 transition duration-200 ease-in-out"
+        style: "#22c55e",
+        pattern: /^0x[a-fA-F0-9]{40}$/g
     }
 ]

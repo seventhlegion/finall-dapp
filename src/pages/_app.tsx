@@ -1,4 +1,5 @@
 import { Web3Provider } from '@ethersproject/providers';
+import { CssBaseline } from '@mui/material';
 import { ThemeProvider } from '@mui/material/styles';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Web3ReactProvider } from '@web3-react/core';
@@ -24,6 +25,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <Web3ReactProvider getLibrary={getLib}>
         <QueryClientProvider client={queryClient}>
           <Provider>
+            <CssBaseline />
             <Component {...pageProps} />
           </Provider>
         </QueryClientProvider>

@@ -7,10 +7,11 @@ import { useERC20Contract } from "./useContract";
 export const useBalance = (
     library?: Web3Provider,
     account?: string | Promise<string>,
-    options?: UseQueryOptions,
     erc20Address?: string,
     isCoin?: boolean,
-    chainId?: number | string) => {
+    chainId?: number | string,
+    isTransactionComplete?: string,
+    options?: UseQueryOptions,) => {
 
     const contract = useERC20Contract(false, erc20Address);
 
@@ -22,11 +23,11 @@ export const useBalance = (
         }
     }
 
-    const { data }: UseQueryResult = useQuery(['balanceOf', erc20Address, chainId] as QueryKey, balanceOfContract, { ...options });
+    const { data }: UseQueryResult = useQuery(['balanceOf', erc20Address, chainId, !!isTransactionComplete] as QueryKey, balanceOfContract, { ...options });
 
     if (!data) return 0;
 
-    if (isCoin === false) return formatEther(data?.[0] as BigNumber);
+    if (isCoin === false) return formatEther((data as unknown[])?.[0] as BigNumber);
 
     return formatEther(data as BigNumber)
 }

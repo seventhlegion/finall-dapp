@@ -4,5 +4,6 @@ export type NetworkButtonProps = {
     network: any,
     setChain: Function,
     activate: Function,
-    connector: InjectedConnector
+    connector: InjectedConnector,
+    setPattern: Function
 }

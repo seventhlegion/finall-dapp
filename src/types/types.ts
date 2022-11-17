@@ -1,7 +1,7 @@
 export type Token = {
-    value: string | undefined,
-    label: string | undefined,
-    isCoin: boolean | undefined
+    value?: string
+    label?: string
+    isCoin?: boolean
 }
 
 export type Networks = {
@@ -21,6 +21,7 @@ export type Networks = {
     };
     chainId: string;
     style: string;
+    pattern: RegExp
 }[]
 
 export type NetworkContracts = {

@@ -1,3 +1,4 @@
+import { Box } from "@mui/material";
 import { ReactElement } from "react";
 import { ActiveProps } from "./type";
 
@@ -5,10 +6,10 @@ function Active({ active }: ActiveProps): ReactElement {
     return (
         <>
             {active
-                ? (<div className='w-4 h-4 bg-green-500 rounded-full' />)
+                ? (<Box width={15} height={15} bgcolor={"#22c55e"} borderRadius={"100%"} />)
                 : !active
-                    ? (<div className='w-4 h-4 bg-red-500 rounded-full' />)
-                    : (<div className='w-4 h-4 bg-zinc-500 rounded-full' />)}
+                    ? (<Box width={15} height={15} bgcolor={"#ef4444"} borderRadius={"100%"} />)
+                    : (<Box width={15} height={15} bgcolor={"#737373"} borderRadius={"100%"} />)}
         </>
     )
 }

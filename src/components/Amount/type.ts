@@ -1,6 +1,9 @@
 import { Control } from "react-hook-form"
+import { FormInput } from "../Account/type"
 
 export type AmountProps = {
-    control: Control | any,
-    error?: boolean
+    control: Control<FormInput, any>,
+    validation?: {
+        required: boolean
+    }
 }

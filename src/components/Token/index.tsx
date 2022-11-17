@@ -5,9 +5,9 @@ import { TokenProps } from "./type";
 
 function Token({ chain, setToken, control, error }: TokenProps) {
 
-    let options: any;
+    let options: ({ label: string; isCoin: boolean; } | { value: string; label: string; isCoin: boolean; })[];
 
-    networkContracts.map((tokenContract: any) => {
+    networkContracts.map((tokenContract) => {
         if (tokenContract.networkChainId === chain) options = tokenContract.networkTokenContracts
     });
 
@@ -18,7 +18,7 @@ function Token({ chain, setToken, control, error }: TokenProps) {
             rules={{ required: true }}
             render={({ field: { onChange } }) => (
                 <Autocomplete
-                    className="w-full"
+                    fullWidth
                     disablePortal
                     options={options}
                     onChange={(event, value) => { onChange(value); setToken(value) }}

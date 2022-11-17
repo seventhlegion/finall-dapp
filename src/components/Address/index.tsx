@@ -1,20 +1,21 @@
-import { TextField } from '@mui/material'
-import { ReactElement } from 'react'
-import { Controller } from 'react-hook-form'
-import { AddressProps } from './type'
+import { TextField } from '@mui/material';
+import { ReactElement } from 'react';
+import { Controller } from 'react-hook-form';
+import { AddressProps } from './type';
 
-function Address({ control, error }: AddressProps): ReactElement {
+function Address({ control, validation }: AddressProps): ReactElement {
+
     return (
         <Controller
             name="address"
             control={control}
-            rules={{ required: true }}
-            render={({ field: { onChange } }) => (
+            rules={validation}
+            render={({ field: { onChange }, formState: { errors } }) => (
                 <TextField
-                    className="w-full"
+                    fullWidth
                     label={"Address"}
                     autoComplete="off"
-                    color={error ? "error" : "primary"}
+                    color={errors.address?.type === 'required' ? "error" : "primary"}
                     onChange={onChange}
                 />
             )}

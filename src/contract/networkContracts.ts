@@ -19,7 +19,7 @@ export const networkContracts: NetworkContracts = [
                 isCoin: false,
             },
             {
-                value: "0xF9f93cF501BFaDB6494589Cb4b4C15dE49E85D0e",
+                value: "0xFa60D973F7642B748046464e165A65B7323b0DEE",
                 label: "CAKE",
                 isCoin: false,
             },

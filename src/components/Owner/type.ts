@@ -1,3 +1,3 @@
 export type OwnerProps = {
-    account: string | Promise<string> | any
+    account?: string
 }

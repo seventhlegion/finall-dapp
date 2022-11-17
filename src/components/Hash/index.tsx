@@ -1,3 +1,4 @@
+import { Box, Typography } from '@mui/material';
 import { ReactElement } from 'react';
 import { HashProps } from './type';
 
@@ -5,15 +6,15 @@ function Hash({ transfer }: HashProps): ReactElement {
 
     if (!!transfer?.hash) {
         return (
-            <div className='grow'>
-                <h1 className='text-slate-300 text-lg transition-all duration-200 ease-in'>
+            <Box flexGrow={1}>
+                <Typography variant={"h1"} color={"#cbd5e1"}>
                     Transaction Completed 😃
-                </h1>
-            </div>
+                </Typography>
+            </Box>
         )
     } else {
         return (
-            <div className='grow'></div>
+            <Box flexGrow={1} />
         )
     }
 }

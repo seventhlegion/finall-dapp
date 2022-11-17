@@ -1,14 +1,14 @@
-import { Container } from '@mui/material';
+import { Container, Typography } from '@mui/material';
 import { ReactElement } from "react";
 import { OwnerProps } from './type';
 
 function Owner({ account }: OwnerProps): ReactElement {
     return (
         <Container>
-            <h1 className='w-full justify-self-start text-lg text-slate-600'>Wallet Address :</h1>
-            <h1 className='text-md text-slate-300 text-center'>
+            <Typography variant='h1' justifySelf={"start"} fontSize={"1.125rem"} lineHeight={"1.75rem"} color={'#64748b'} >Wallet Address :</Typography>
+            <Typography variant='h1' color={"#cbd5e1"} fontSize={"1rem"} lineHeight={"1.5rem"} textAlign={"center"}>
                 {account}
-            </h1>
+            </Typography>
         </Container>
     )
 }

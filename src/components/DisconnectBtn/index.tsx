@@ -5,8 +5,7 @@ import { DisconnectButtonProps } from './type';
 function DisconncetButton({ deactivate }: DisconnectButtonProps): ReactElement {
     return (
         <Button
-            sx={{ borderRadius: "0.5rem" }}
-            color={"error"}
+            color={"primary"}
             variant='outlined'
             onClick={() => {
                 deactivate();

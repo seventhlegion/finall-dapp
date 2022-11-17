@@ -4,20 +4,20 @@ import { Controller } from "react-hook-form"
 import { NumericFormat } from "react-number-format"
 import { AmountProps } from "./type"
 
-function Amount({ control, error }: AmountProps): ReactElement {
+function Amount({ control, validation }: AmountProps): ReactElement {
     return (
         <Controller
             name="amount"
             control={control}
-            rules={{ required: true }}
-            render={({ field: { onChange } }) => (
+            rules={validation}
+            render={({ field: { onChange }, formState: { errors } }) => (
                 <NumericFormat
-                    className="w-full"
+                    fullWidth
                     label={"Amount"}
                     decimalScale={18}
                     autoComplete="off"
                     customInput={TextField}
-                    color={error ? "error" : "primary"}
+                    color={errors.amount?.type === 'required' ? "error" : "primary"}
                     onChange={onChange}
                 />
             )}

@@ -5,15 +5,17 @@ import Head from 'next/head';
 import InjectedConnector from '../components/InjectedConnector.card.tsx';
 import NetworkSelect from '../components/NetworkSelect';
 import { metaMaskConnector } from '../connector/injectedConector';
-import { initialChainId } from '../utils/initialValues';
+import { initialChainId, initialPattern } from '../utils/initialValues';
 
 export default function Home() {
 
   const [chain, setChain] = useAtom(initialChainId);
+  const [pattern, setPattern] = useAtom(initialPattern);
 
   const metaMask = metaMaskConnector();
 
   const { account, activate, active, library, chainId, deactivate } = useWeb3React<Web3Provider>();
+
 
   return (
     <>
@@ -31,13 +33,15 @@ export default function Home() {
           library={library}
           chainId={chainId}
           chain={chain}
-          deactivate={deactivate} />
+          deactivate={deactivate}
+          pattern={pattern} />
         )
         : (<NetworkSelect
           data-testid="NetworkSelect"
           setChain={setChain}
           connector={metaMask}
-          activate={activate} />
+          activate={activate}
+          setPattern={setPattern} />
         )
       }
     </>

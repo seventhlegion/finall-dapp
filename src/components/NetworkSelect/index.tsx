@@ -7,12 +7,13 @@ import { NetworkSelectProps } from './type';
 function NetworkSelect({
     setChain,
     connector,
-    activate }: NetworkSelectProps): ReactElement {
+    activate,
+    setPattern }: NetworkSelectProps): ReactElement {
     return (
         <Grid container columns={{ xs: 1, md: 2 }} height="100vh">
             {networks.map((network: any) => (
                 <Grid key={network.chainId} item xs={10} md={1}>
-                    <NetworkButton network={network} setChain={setChain} activate={activate} connector={connector} />
+                    <NetworkButton network={network} setChain={setChain} activate={activate} connector={connector} setPattern={setPattern} />
                 </Grid>
             ))}
         </Grid>

@@ -1,19 +1,19 @@
-import { Container } from '@mui/material';
+import { Container, Typography } from '@mui/material';
 import { Fragment, ReactElement } from "react";
 import { useBalance } from '../../hooks/useBalance';
 import { BalanceProps } from './type';
 
-function Balance({ library, account, token, chainId }: BalanceProps): ReactElement {
+function Balance({ library, account, token, chainId, isTransactionComplete }: BalanceProps): ReactElement {
 
-    const balance = useBalance(library, account, { enabled: true }, token?.value, token?.isCoin, chainId);
+    const balance = useBalance(library, account, token?.value, token?.isCoin, chainId, isTransactionComplete);
 
     return (
         <Fragment>
             <Container>
-                <h1 className='w-full justify-self-start text-lg text-slate-600'>Balance : </h1>
-                <h1 className='text-md text-slate-300 text-center'>
+                <Typography variant='h1' justifySelf={"start"} fontSize={"1.125rem"} lineHeight={"1.75rem"} color={'#64748b'} >Balance : </Typography>
+                <Typography variant='h1' color={"#cbd5e1"} fontSize={"1rem"} lineHeight={"1.5rem"} textAlign={"center"}>
                     {balance}
-                </h1>
+                </Typography>
             </Container>
         </Fragment>
     )

@@ -3,24 +3,25 @@ import { createTheme } from "@mui/material/styles";
 export const theme = createTheme({
     palette: {
         mode: "dark",
+        primary: {
+            main: "#cbd5e1",
+        },
         success: {
-            main: "#22c55e"
+            main: "#22c55e",
         },
         error: {
-            main: "#cbd5e1"
+            main: "#dc2626",
         },
+    },
+    shape: {
+        borderRadius: 8
     },
     components: {
         MuiStack: {
             defaultProps: {
-                borderRadius: "0.5rem",
+                borderRadius: "8px",
                 bgcolor: "rgb(23 23 23 / 0.3)",
             },
         },
     },
 });
-
-export const MuiStackSx = {
-    boxShadow: "0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)",
-    backdropFilter: "blur(4px)"
-};

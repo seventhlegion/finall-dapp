@@ -6,4 +6,5 @@ export type BalanceProps = {
     account?: string | Promise<string>,
     token?: Token,
     chainId?: number | string
+    isTransactionComplete?: string
 }
